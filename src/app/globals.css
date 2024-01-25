@@ -1,4 +1,13 @@
+* {
+  box-sizing: border-box;
+}
 
+
+nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
 
 
 .post {
