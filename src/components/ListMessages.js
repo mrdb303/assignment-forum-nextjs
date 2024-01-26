@@ -3,7 +3,9 @@ import { sql } from "@vercel/postgres";
 
 export default async function ListMessages(params){
 
-  const comments = await sql`SELECT * FROM bl_comments WHERE com_post_id = ${params.id}`;
+  //const comments = await sql`SELECT * FROM bl_comments WHERE com_post_id = ${params.id}`;
+  const comments = await sql`SELECT * FROM bl_comments WHERE bl_comments.com_post_id = ${params.id}`;
+   //6;
   //console.log(comments);
   // {comments.rows}
 
