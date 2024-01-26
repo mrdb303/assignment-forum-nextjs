@@ -1,12 +1,14 @@
 
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from 'next/cache';
+
 //import { Navigate } from 'react-router-dom';
 import ListMessages from "../../../components/ListMessages";
 import SaveMessageButton from "../../../components/SaveMessageButton";
-import handleAddComment from "../../../components/HandleAddComment.js";
-import {Link} from "next/link";
+//import handleAddComment from "../../../components/HandleAddComment.js";
 import { redirect } from "next/navigation";
+import {Link} from "next/link";
+
 
 export default async function ViewSinglePost({ params }) {
   
@@ -22,10 +24,9 @@ export default async function ViewSinglePost({ params }) {
     
       // Run the query to write message to database
       await sql`INSERT INTO bl_comments (com_post_id, com_author, com_content) VALUES ( ${id}, ${author}, ${content})`;
-    
-      // revalidate path and refresh to display
-      revalidatePath('/posts[postId]');
-      redirect('/posts');  
+
+      revalidatePath('/', 'layout');
+      redirect(`/posts/${params.postId}`);  
      
     }
       
@@ -36,8 +37,6 @@ export default async function ViewSinglePost({ params }) {
       <p>Title: {indivPost.rows[0].post_title}</p>
       <p>Content: {indivPost.rows[0].post_content}</p>
       <p>Author: {indivPost.rows[0].post_author}</p>
-
-      {/* Form goes here*/}
 
       <h3>Leave a Message</h3>
 

@@ -1,10 +1,11 @@
 
 import { sql } from "@vercel/postgres";
+import Link from "next/link";
 
 export default async function ListMessages(params){
 
   //const comments = await sql`SELECT * FROM bl_comments WHERE com_post_id = ${params.id}`;
-  const comments = await sql`SELECT * FROM bl_comments WHERE bl_comments.com_post_id = ${params.id}`;
+  const comments = await sql`SELECT * FROM bl_comments WHERE bl_comments.com_post_id = ${params.id} ORDER BY com_date DESC`;
    //6;
   //console.log(comments);
   // {comments.rows}
@@ -17,6 +18,7 @@ export default async function ListMessages(params){
           return (
             <div key={comment.com_id} className="comment">
               <p>{comment.com_author} | {comment.com_content} | date of post goes here</p>
+              <button>Delete</button><button>Edit</button>
               {/* <p>{comment.com_date}</p> */}
 
             </div>
