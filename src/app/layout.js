@@ -20,6 +20,7 @@ export default function RootLayout({ children }) {
         <nav>
           <Link href="/">Home</Link>
           <Link href="/posts">Posts</Link>
+          <Link href="/posts/addpost">Add a Post</Link>
         </nav>
        
 

@@ -5,7 +5,6 @@ import { revalidatePath } from 'next/cache';
 //import { Navigate } from 'react-router-dom';
 import ListMessages from "../../../components/ListMessages";
 import SaveMessageButton from "../../../components/SaveMessageButton";
-//import handleAddComment from "../../../components/HandleAddComment.js";
 import { redirect } from "next/navigation";
 import {Link} from "next/link";
 
