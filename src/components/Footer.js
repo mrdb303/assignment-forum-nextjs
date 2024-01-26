@@ -2,7 +2,9 @@
 export default function Footer(){
 
   return (
-    <h1>Here is the footer</h1>
+    <footer>
+      <h2>Here is the footer</h2>
+    </footer>
   );
 
 
