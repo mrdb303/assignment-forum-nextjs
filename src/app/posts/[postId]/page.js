@@ -55,7 +55,7 @@ export default async function ViewSinglePost({ params }) {
       </form>
     </div>
 
-    <ListMessages/>
+    <ListMessages id={params.postId}/>
 
     </div>
   );
