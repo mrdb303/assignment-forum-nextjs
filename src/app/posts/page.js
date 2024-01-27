@@ -6,21 +6,30 @@ export default async function ListPostsPage() {
 
 
   return (
-    <div>
-      <h2>Home</h2>
+    <>
+      <h3>Posts</h3>
       <div className="posts">
         {allPosts.rows.map((post) => {
           return (
-            <div key={post.post_id} className="post">
-              <p>Author: {post.post_author}</p>
-              <p>Title: {post.post_title}</p>
+            <form key={post.post_id}>
+              <label htmlFor="name">Name: </label>
+              <input name="authorname" id="authorname" defaultValue={post.post_author}/><br/>
+
+              <label htmlFor="posttitle">Title: </label>
+              <input name="title" id="title" defaultValue={post.post_title}/><br/>
+
               {/* <p>Date: {post.post_date}</p> */}
               <Link href={`/posts/${post.post_id}`}><button>View post</button></Link>
-            </div>
+            </form>
           );
         })}
-      </div>
-      <h3>Number of posts: {allPosts.rowCount}</h3>
+      
+      <h4>Number of posts: {allPosts.rowCount}</h4>
     </div>
+    </>
   );
 }
+
+/*
+
+*/

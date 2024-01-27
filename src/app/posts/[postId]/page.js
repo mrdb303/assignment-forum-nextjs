@@ -31,30 +31,39 @@ export default async function ViewSinglePost({ params }) {
       
 
   return (
-    <div>
-      <p>{indivPost.rows[0].post_id}</p>
-      <p>Title: {indivPost.rows[0].post_title}</p>
-      <p>Content: {indivPost.rows[0].post_content}</p>
-      <p>Author: {indivPost.rows[0].post_author}</p>
+<>
+    
+      <form>
+      {/* <p>{indivPost.rows[0].post_id}</p> */}
+      <label htmlFor="posttitle">Name</label>
+        <input name="posttitle" id="posttitle" defaultValue={indivPost.rows[0].post_title}/>
 
-      <h3>Leave a Message</h3>
+      <label htmlFor="postcontent">Post</label>
+        <input name="postmessage" id="postmessage" defaultValue={indivPost.rows[0].post_content}/>
 
+      <label htmlFor="postauthor">Author</label>
+        <input name="postauthor" id="postauthor" defaultValue={indivPost.rows[0].post_author}/>
+      </form>
+    
+      
 
-      <div>
-      <h2>Add a Comment</h2>
+    <h3>Add a Comment</h3>
+    
+      
       <form action={handleAddComment}>
         <label htmlFor="name">Name</label>
         <input name="authorname" id="authorname" placeholder="Name" />
 
-        <label htmlFor="content">Your message</label>
-        <input name="content" id="content" placeholder="content" />
+        <label htmlFor="contentval">Your message</label>
+        <input name="contentval" id="contentval" placeholder="content" />
+        <br/>
 
         <SaveMessageButton/>
       </form>
-    </div>
-
+    
     <ListMessages id={params.postId}/>
-
-    </div>
+    
+    
+    </>
   );
 }

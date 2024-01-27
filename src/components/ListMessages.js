@@ -12,7 +12,7 @@ export default async function ListMessages(params){
 
   return (
     <div>
-      <h3>comments: {comments.rowCount}</h3>
+      <h4>comments: {comments.rowCount}</h4>
       <div className="comments">
         {comments.rows.map((comment) => {
           return (

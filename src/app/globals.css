@@ -12,7 +12,8 @@ body {
   
 }
 
-h1, h2, h3 {
+h1, h2, h3 ,h4{
+  text-decoration: none;
   color: white;
 }
 
@@ -33,6 +34,15 @@ nav {
 nav.a {
   color: white;
 }
+
+label {
+  width: 8rem;
+  display: block;
+  height: 1.5rem;
+  padding-bottom: 0.8rem;
+  
+}
+
 
 a {
   text-decoration: none;
@@ -58,18 +68,56 @@ a {
 header {
   background-color: #251d24;
   color: #f2e394;
-  height: 3rem;
   width: 100%;
   margin: 0 auto;
   text-align: center;
+
+  height: 4rem;
 }
 
 /* Copy of header*/
 footer {
   background-color: #251d24;
   color: #f2e394;
-  height: 3rem;
   width: 100%;
   margin: 0 auto;
   text-align: center;
+
+  height: 3rem;
+  margin-top: 5rem;
+}
+
+form {
+  background-color: #1f5934;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  color: white;
+  border: 1px solid #0a130f;
+}
+
+/*same as #form*/
+.post, .comment, .category {
+  background-color: #1f5934;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  color: white;
+  border: 1px solid #0a130f;
+
+}
+
+
+button {
+  color: white;
+  background-color: #251d24;
+  border: 1px solid #0a130f;
+  border-radius: 5px;
+  padding: 4px;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 10px;
 }

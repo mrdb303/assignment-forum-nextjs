@@ -16,13 +16,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Header/>
-       
         <nav>
           <Link href="/">Home</Link>
           <Link href="/posts">Posts</Link>
           <Link href="/posts/addpost">Add a Post</Link>
           <Link href="/posts/categories">List Categories</Link>
         </nav>
+        
        
         <div id="wrapper">
           <div id="child-wrapper">

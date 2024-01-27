@@ -32,12 +32,12 @@ export default async function addPost() {
       <div>
       <h2>Add a New Post</h2>
       <form action={handleAddPost}>
-        <label htmlFor="name">Name</label>
-        <input name="authorname" id="authorname" placeholder="Name" />
-        <label htmlFor="title">Post Title</label>
-        <input name="title" id="title" placeholder="title" />
-        <label htmlFor="content">Your message</label>
-        <input name="content" id="content" placeholder="content" />
+        <label htmlFor="name">Name: </label>
+        <input name="authorname" id="authorname" placeholder="Name" /><br/>
+        <label htmlFor="title">Post Title: </label>
+        <input name="title" id="title" placeholder="title" /><br/>
+        <label htmlFor="content">Your message: </label>
+        <input name="content" id="content" placeholder="content" /><br/>
         <br/>
         <AddPostButton/>
       </form>
