@@ -26,24 +26,34 @@ export default async function ViewSinglePost({ params }) {
 
       revalidatePath('/', 'layout');
       redirect(`/posts/${params.postId}`);  
-     
     }
       
 
   return (
-<>
-    
-      <form>
+    <>
+    <form>
       {/* <p>{indivPost.rows[0].post_id}</p> */}
       <label htmlFor="posttitle">Name</label>
-        <input name="posttitle" id="posttitle" defaultValue={indivPost.rows[0].post_title}/>
+      <input name="posttitle" 
+        id="posttitle" 
+        defaultValue={indivPost.rows[0].post_title}
+        readonly=""
+      />
 
       <label htmlFor="postcontent">Post</label>
-        <input name="postmessage" id="postmessage" defaultValue={indivPost.rows[0].post_content}/>
+      <input name="postmessage" 
+        id="postmessage" 
+        defaultValue={indivPost.rows[0].post_content}
+        readonly=""
+      />
 
       <label htmlFor="postauthor">Author</label>
-        <input name="postauthor" id="postauthor" defaultValue={indivPost.rows[0].post_author}/>
-      </form>
+      <input name="postauthor" 
+        id="postauthor" 
+        defaultValue={indivPost.rows[0].post_author}
+        readonly=""
+      />
+    </form>
     
       
 

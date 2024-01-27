@@ -13,10 +13,14 @@ export default async function ListPostsPage() {
           return (
             <form key={post.post_id}>
               <label htmlFor="name">Name: </label>
-              <input name="authorname" id="authorname" defaultValue={post.post_author}/><br/>
+              <input name="authorname" id="authorname" defaultValue={post.post_author}
+              readonly=""
+              /><br/>
 
               <label htmlFor="posttitle">Title: </label>
-              <input name="title" id="title" defaultValue={post.post_title}/><br/>
+              <input name="title" id="title" defaultValue={post.post_title}
+              readonly=""
+              /><br/>
 
               {/* <p>Date: {post.post_date}</p> */}
               <Link href={`/posts/${post.post_id}`}><button>View post</button></Link>

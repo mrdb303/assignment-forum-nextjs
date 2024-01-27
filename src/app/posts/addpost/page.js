@@ -16,7 +16,6 @@ export default async function addPost() {
     const author = formData.get("authorname");
     const title = formData.get("title");
     const content = formData.get("content");
-    //const id = params.postId;
   
     // Run the query to write message to database
     await sql`INSERT INTO bl_posts ( post_author, post_title, post_content) VALUES ( ${author}, ${title}, ${content})`;
@@ -42,7 +41,5 @@ export default async function addPost() {
         <AddPostButton/>
       </form>
     </div>
-
-
   );
 }
