@@ -7,7 +7,7 @@ export default async function ListPostsPage() {
 
   return (
     <>
-      <h3>Posts</h3>
+      <h3>Tips Posted</h3>
       <div className="posts">
         {allPosts.rows.map((post) => {
           return (

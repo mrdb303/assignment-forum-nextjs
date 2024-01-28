@@ -1,4 +1,3 @@
-
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from 'next/cache';
 import ListMessages from "../../../components/ListMessages";
@@ -8,9 +7,10 @@ import { redirect } from "next/navigation";
 import {Link} from "next/link";
 
 
+// Displays a single post and allows user to add a message
+// Allows a user to add a like.
+
 export default async function ViewSinglePost({ params }) {
-  
-    
     const indivPost = await sql`SELECT cat_name, post_id, post_title, post_content, post_author, post_likes FROM bl_posts INNER JOIN bl_categories ON post_id = ${params.postId} ORDER BY post_date DESC`;
     
     async function handleAddComment(formData) {
@@ -28,7 +28,7 @@ export default async function ViewSinglePost({ params }) {
       redirect(`/posts/${params.postId}`);  
     }
       
-// ?????????????????????????????????????????????????
+
     async function handleAddLike(formData) {
       "use server";
     
@@ -41,8 +41,10 @@ export default async function ViewSinglePost({ params }) {
       // Run the query to write message to database
       await sql`UPDATE bl_posts SET post_likes = ${likesVal} WHERE post_id = ${id}`;
 
+      
+
       revalidatePath('/', 'layout');
-      redirect(`/posts`);  // change to main posts page
+      redirect(`/posts`);
     }
 
   return (
@@ -85,6 +87,8 @@ export default async function ViewSinglePost({ params }) {
           readOnly={true}
         />
 
+        {/*Hiding this value. Allows the id value to be sent with 
+        form submission */}
         <input name="idval" 
           id="idval"
           type="hidden"
@@ -93,14 +97,12 @@ export default async function ViewSinglePost({ params }) {
         <br/><br/>
         
         <AddLikeButton/>
-        
       </form>
       
       
 
     <h3>Add a Comment</h3>
     
-      
       <form action={handleAddComment}>
         <label htmlFor="name">Your Name:</label>
         <input name="authorname" 
@@ -112,10 +114,10 @@ export default async function ViewSinglePost({ params }) {
         <label htmlFor="contentval">Your Message</label>
         <input name="contentval" 
           id="contentval" 
-          placeholder="Message content" 
+          placeholder="Message content"
           required
         />
-        <br/>
+        <br/><br/>
 
         <SaveMessageButton/>
       </form>
