@@ -12,15 +12,39 @@ export default async function ListMessages(params){
       <div className="comments">
         {comments.rows.map((comment) => {
           return (
-            <div key={comment.com_id} className="comment">
-              <p>{comment.com_author} | {comment.com_content} | date of post goes here</p>
+            <form key={comment.com_id}>
+              <label htmlFor="name">Name: </label>
+              <input name="authorname" id="authorname" 
+                defaultValue={comment.com_author} 
+                readOnly={true}
+              /><br/>
+              <label htmlFor="content">Message: </label>
+              <input name="content" id="content"  
+                defaultValue={comment.com_content} 
+                readOnly={true}
+              /><br/>
+
+              <p>{comment.com_content}</p>
               <button>Delete</button><button>Edit</button>
               {/* <p>{comment.com_date}</p> */}
 
-            </div>
+              </form>
           );
         })}
       </div>
     </div>
   );
 }
+
+/*
+<form action={handleAddPost}>
+        <label htmlFor="name">Name: </label>
+        <input name="authorname" id="authorname" placeholder="Name" /><br/>
+        <label htmlFor="title">Post Title: </label>
+        <input name="title" id="title" placeholder="title" /><br/>
+        <label htmlFor="content">Your message: </label>
+        <input name="content" id="content" placeholder="content" /><br/>
+        <br/>
+        <AddPostButton/>
+      </form>
+*/

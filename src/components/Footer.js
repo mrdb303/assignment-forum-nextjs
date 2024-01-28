@@ -3,7 +3,7 @@ export default function Footer(){
 
   return (
     <footer>
-      <h2>Here is the footer</h2>
+      <p>Rate my top tips 2024</p>
     </footer>
   );
 

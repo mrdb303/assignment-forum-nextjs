@@ -7,8 +7,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Blog project",
-  description: "Simple blog in React and Next.js",
+  title: "Rate My Top Tips",
+  description: "Rate top tips in a forum style",
 };
 
 export default function RootLayout({ children }) {
@@ -18,8 +18,8 @@ export default function RootLayout({ children }) {
         <Header/>
         <nav>
           <Link href="/">Home</Link>
-          <Link href="/posts">Posts</Link>
-          <Link href="/posts/addpost">Add a Post</Link>
+          <Link href="/posts">Show Tips</Link>
+          <Link href="/posts/addpost">Add a Tip</Link>
           <Link href="/posts/categories">List Categories</Link>
         </nav>
         

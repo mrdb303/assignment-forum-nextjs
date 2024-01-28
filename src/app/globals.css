@@ -8,8 +8,8 @@ html {
 }
 
 body {
-  background-color: #234236;
-  
+  background-color: #5d375b;
+  min-height: 100vh;
 }
 
 h1, h2, h3 ,h4{
@@ -17,8 +17,21 @@ h1, h2, h3 ,h4{
   color: white;
 }
 
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+}
+
 h3 {
   font-size: 1.2rem;
+}
+
+p {
+  font-size: 0.875rem;
+  color: white;
 }
 
 nav {
@@ -36,11 +49,15 @@ nav.a {
 }
 
 label {
-  width: 8rem;
+  width: 20rem;
   display: block;
-  height: 1.5rem;
-  padding-bottom: 0.8rem;
-  
+  height: 0.875rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 79%;
 }
 
 
@@ -57,38 +74,42 @@ a {
 
 #wrapper {
   margin: 0 auto;
+  position: relative;
 }
 
 #child-wrapper {
-  width: 1000px;
+  width: 600px;
   margin: 0 auto;
   margin-top: 3rem;
 }
 
 header {
-  background-color: #251d24;
+  background-color: #2a2229;
   color: #f2e394;
   width: 100%;
   margin: 0 auto;
   text-align: center;
+  padding-top: 0.7rem;
 
   height: 4rem;
 }
 
 /* Copy of header*/
 footer {
-  background-color: #251d24;
-  color: #f2e394;
-  width: 100%;
-  margin: 0 auto;
+  background-color: #2a2229;
+  color: white;
+
+  /* margin: 0 auto; */
   text-align: center;
 
-  height: 3rem;
   margin-top: 5rem;
+  padding-top: 0.5rem;
+  width: 100%;
+  height: 3rem; 
 }
 
 form {
-  background-color: #1f5934;
+  background-color: #48314E;
   border-radius: 10px;
   margin-bottom: 2rem;
   margin-top: 2rem;
@@ -99,14 +120,17 @@ form {
 
 /*same as #form*/
 .post, .comment, .category {
-  background-color: #1f5934;
+  background-color: #48314E;
   border-radius: 10px;
   margin-bottom: 2rem;
   margin-top: 2rem;
   padding: 1rem;
   color: white;
   border: 1px solid #0a130f;
+}
 
+.category {
+  text-align: center;
 }
 
 
@@ -117,7 +141,7 @@ button {
   border-radius: 5px;
   padding: 4px;
   margin-top: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 0;
+  margin-right: 8px;
   margin-bottom: 10px;
 }
