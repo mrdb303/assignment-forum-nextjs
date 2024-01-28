@@ -44,15 +44,13 @@ The project was implemented in two stages
 
 1. Created Database (Postgres in Render)
 2. Client/Server (in React/Next.js and hosted on Render)
-<br>
-
 
 [insert extra notes here]
+
 <br>
 
-### Requirements achieved
 
-### Requirements
+### Requirements achieved
 
 - Created using create-next-app
 - Design a SQL schema for a posts table, and a comments table that has a post_id column connecting it to the posts table.
@@ -62,6 +60,6 @@ The project was implemented in two stages
 - Refresh the /post/:postId route when adding a new comment, so the new comment is displayed on the page
 <br>
 
-
+Live link at Vercel: [https://assignment-forum-nextjs.vercel.app/] (https://assignment-forum-nextjs.vercel.app/)
 <br>
 
