@@ -56,7 +56,7 @@ The project was implemented in two stages
 
 - Created using create-next-app
 - Design a SQL schema for a posts table, and a comments table that has a post_id column connecting it to the posts table.
-- Either create a form where users can add posts OR seed your database with at least 4 posts that comments can be added to ( Add post form was implemented - also SQL queries were used to populate tables - documented at [https://github.com/mrdb303/assignment-forum-nextjs/blob/main/src/app/databaseinformation.txt](https://github.com/mrdb303/assignment-forum-nextjs/blob/main/src/app/databaseinformation.txt)<br>)
+- Either create a form where users can add posts OR seed your database with at least 4 posts that comments can be added to ( Add post form was implemented - also SQL queries were used to populate tables - documented [here](https://github.com/mrdb303/assignment-forum-nextjs/blob/main/src/app/databaseinformation.txt)<br>
 - Add a form to the individual post page to allow creating a new comment, which is saved to the new comments table including the Post ID.
 - Refresh the /posts route data when adding a new post, and redirect the user to the list of posts
 - Refresh the /post/:postId route when adding a new comment, so the new comment is displayed on the page
