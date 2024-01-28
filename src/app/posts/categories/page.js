@@ -26,6 +26,8 @@ export default async function ListCategories(){
             </Link>
           );
         })}
+        <br/>
+        <p>Click on a category above to see the tips in that section</p>
       </div>
       </>
   );
