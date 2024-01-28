@@ -60,6 +60,14 @@ The project was implemented in two stages
 - Refresh the /post/:postId route when adding a new comment, so the new comment is displayed on the page
 <br>
 
+### Stretch goals achieved
+
+- Add a categories table to allow categorisation of posts at creation time using a dropdown menu. Add a /categories route that lists all categories, and a /categories/:id route that lists all posts in a category
+
+<br/>
+
+
+
 Live link at Vercel: [https://assignment-forum-nextjs.vercel.app/](https://assignment-forum-nextjs.vercel.app/)
 <br>
 
