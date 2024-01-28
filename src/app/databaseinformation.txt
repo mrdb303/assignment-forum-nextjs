@@ -1,0 +1,69 @@
+/*
+SQL Queries Used to Build and Populate Tables:
+
+
+Table: bl_categories
+====================
+
+CREATE TABLE IF NOT EXISTS bl_categories (
+cat_id SERIAL PRIMARY KEY,
+cat_name VARCHAR(40) NOT NULL
+);
+
+INSERT INTO bl_categories (cat_name) VALUES
+('Travel'),
+('Money'),
+('Work'),
+('Culture'),
+('Miscellaneous');
+
+
+
+Table: bl_posts
+===============
+
+CREATE TABLE IF NOT EXISTS bl_posts (
+  post_id SERIAL PRIMARY KEY,
+  post_author VARCHAR(40) NOT NULL,
+  post_title VARCHAR(60) NOT NULL,
+  post_content VARCHAR(255) NOT NULL,
+  post_cat_id INTEGER REFERENCES bl_categories(cat_id),
+  post_likes INTEGER DEFAULT 0 NOT NULL,
+  post_date timestamp[] NOT NULL DEFAULT array[now()]
+);
+
+INSERT INTO bl_posts (post_author, post_title, post_content, post_cat_id, post_likes ) VALUES
+('Master Yoda', 'Snow', 'When visiting the icy wastes of Hoth, yellow snow, eat you should not.', 1, 15 ),
+('Cuthbert Dangleberry', 'Wallet', 'Avoid having your wallet stolen, by keeping it in your Y-fronts.', 2, 5 ),
+('Cyril Rowbottom', 'Time keeping', 'Avoid being late for work by staying there 24 hours a day.', 3, 0 ),
+('Jack the hat Tunnocks', 'Digit', 'If someone asks you to pull their finger, do not do it. Seriously, do not.', 3, 4 ),
+('Cecil Varney', 'Avoiding accidents', 'Pensioners, avoid nasty falls by going everywhere inside a Zorb ball.', 2, 12 ),
+('Bernie Miggins', 'Solo travel', 'Ensure that you have a seat to yourself on the bus by wearing a straitjacket.', 2, 12 )
+;
+
+
+
+Table: bl_comments
+==================
+
+CREATE TABLE IF NOT EXISTS bl_comments (
+  com_id SERIAL PRIMARY KEY,
+  com_post_id INTEGER REFERENCES bl_posts(post_id),
+  com_author VARCHAR(40) NOT NULL,
+  com_content VARCHAR(255) NOT NULL,
+  com_date timestamp[] NOT NULL DEFAULT array[now()]
+);
+
+INSERT INTO bl_comments (com_author, com_post_id, com_content) VALUES
+('Bertie Bancroft', 1, 'I will second that.'),
+('Shirley Shorely', 1, 'Never a truer word spoken.'),
+('Ethel Blanchflower', 3, 'Get your hooky medications from my dodgy website.'),
+('Doris Knight', 3, 'A simply marvellous post.'),
+('Shirley Shorely', 1, 'What a bunch of twaddle.'),
+('Archibald Tomkins', 2, 'I was thinking that myself.');
+
+
+
+
+
+*/
