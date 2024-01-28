@@ -60,6 +60,6 @@ The project was implemented in two stages
 - Refresh the /post/:postId route when adding a new comment, so the new comment is displayed on the page
 <br>
 
-Live link at Vercel: [https://assignment-forum-nextjs.vercel.app/] (https://assignment-forum-nextjs.vercel.app/)
+Live link at Vercel: [https://assignment-forum-nextjs.vercel.app/](https://assignment-forum-nextjs.vercel.app/)
 <br>
 
