@@ -1,3 +1,35 @@
+/*
+- Form 1
+- ======
+- This is the page that displays the single post/tip chosen in full, including
+- the post/tip content and the category.
+-
+- The SELECT query used performs an INNER JOIN between the posts/tips table to 
+- the categories table based on the post_id. This enables the category name 
+- to be displayed on the form.
+-
+- The action 'handleAddLike' is used to add a like by pressing on the 'Add Like'
+- button. The number of likes is increment using an sql UPDATE query.
+- The button press is handled by an 'AddLikeButton' component to disable the 
+- button while the record is saved.
+-
+- Form 2
+- ======
+- A second form is shown on the page to allow a message/comment to be added.
+- The button press is handled by a component to disable the button while the 
+- record is saved. The action 'handleAddComment' is used to write the 
+- message/comment to the 'comments' table.
+-
+- To keep all of the data linked to the post shown, another query is performed
+- that displays all previous messages/comments linked to the post. This is 
+- carried out in the 'ListMessages' component.
+- 
+- The number of records found is taken from the query and displayed at the 
+- bottom of the page.
+*/
+
+
+
 import { sql } from "@vercel/postgres";
 import { revalidatePath } from 'next/cache';
 import ListMessages from "../../../components/ListMessages";
@@ -80,8 +112,10 @@ export default async function ViewSinglePost({ params }) {
           readOnly={true}
         />
 
-        <label htmlFor="likes">Likes:</label>
-        <input name="likes" 
+        <br/><br/>
+        <h4>Likes: {indivPost.rows[0].post_likes}</h4>
+        <input name="likes"
+          type="hidden"
           id="likes" 
           defaultValue={indivPost.rows[0].post_likes}
           readOnly={true}
@@ -94,7 +128,7 @@ export default async function ViewSinglePost({ params }) {
           type="hidden"
           defaultValue={indivPost.rows[0].post_id}
         />
-        <br/><br/>
+        <br/>
         
         <AddLikeButton/>
       </form>

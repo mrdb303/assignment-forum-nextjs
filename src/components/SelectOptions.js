@@ -1,3 +1,10 @@
+
+/*
+- This grabs the 'options' required for a 'select' HTML tag.
+- The data is pulled live via a SELECT query from the categories table and
+- returned.
+*/
+
 import { sql } from "@vercel/postgres";
 import Link from "next/link";
 

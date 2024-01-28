@@ -24,7 +24,6 @@ export default async function ListMessages(params){
                 readOnly={true}
               /><br/>
 
-              <p>{comment.com_content}</p>
               <button>Delete</button><button>Edit</button>
               {/* <p>{comment.com_date}</p> */}
 
@@ -35,16 +34,3 @@ export default async function ListMessages(params){
     </div>
   );
 }
-
-/*
-<form action={handleAddPost}>
-        <label htmlFor="name">Name: </label>
-        <input name="authorname" id="authorname" placeholder="Name" /><br/>
-        <label htmlFor="title">Post Title: </label>
-        <input name="title" id="title" placeholder="title" /><br/>
-        <label htmlFor="content">Your message: </label>
-        <input name="content" id="content" placeholder="content" /><br/>
-        <br/>
-        <AddPostButton/>
-      </form>
-*/

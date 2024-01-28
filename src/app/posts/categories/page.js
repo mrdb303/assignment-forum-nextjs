@@ -1,3 +1,10 @@
+/* 
+- This page performs an SQL query to grab a list of categories and id's from
+- the categories table.
+- Links are created so that by clicking on them, a page will display a list of 
+- posts for that particular category chosen.
+*/
+
 import { sql } from "@vercel/postgres";
 import Link from "next/link";
 

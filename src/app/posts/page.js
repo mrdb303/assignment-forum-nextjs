@@ -1,3 +1,15 @@
+/*
+- This is the page that lists all of the posts/tips in date order. Newest first.
+- The SELECT query lists the posts from the single bl_posts table.
+- The number of records found is displayed at the bottom of the page.
+- Note that the actual content of the post/tip is not displayed and requires
+- a click on the 'view' button.
+-
+- Clicking on the 'View' button opens a single post/tip in a different script,
+- passing through the single post_id of the record.
+*/
+
+
 import { sql } from "@vercel/postgres";
 import Link from "next/link";
 import DateTimeConvert from "@/components/DateTimeConvert";
@@ -25,9 +37,7 @@ export default async function ListPostsPage() {
                 defaultValue={post.post_title}
                 readOnly={true}
               /><br/><br/>
-              <p>Posted: {`${allPosts.rows[0].post_date[0]}`}</p>
-              {/* <p><DateTimeConvert value={JSON.stringify(allPosts.rows[0].post_date[0])}/></p>  */}
-              {/* <p>Date: {post.post_date}</p> */}
+              
               <Link href={`/posts/${post.post_id}`}><button>View post</button></Link>
             </form>
           );
