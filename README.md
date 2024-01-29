@@ -38,14 +38,14 @@ Add categories and tags to your posts. Add a form to create new comments. Add an
 
 
 
-### Issues and process
+### Process
 
 The project was implemented in two stages
 
 1. Created Database (Postgres in Render)
 2. Client/Server (in React/Next.js and hosted on Render)
 
-[insert extra notes here]
+To avoid the problems encountered in the previous week, the minimum requirements were implemented in the assignment, seen to be working and uploaded before adding any extra functionality.
 
 <br>
 
@@ -54,7 +54,7 @@ The project was implemented in two stages
 
 - Created using create-next-app
 - Design a SQL schema for a posts table, and a comments table that has a post_id column connecting it to the posts table.
-- Either create a form where users can add posts OR seed your database with at least 4 posts that comments can be added to ( Add post form was implemented - also SQL queries were used to populate tables - documented [here](https://github.com/mrdb303/assignment-forum-nextjs/blob/main/src/app/databaseinformation.txt)<br>
+- Either create a form where users can add posts OR seed your database with at least 4 posts that comments can be added to ( Add post form was implemented - also SQL queries were used to populate tables - documented [here](https://github.com/mrdb303/assignment-forum-nextjs/blob/main/src/app/databaseinformation.txt) )<br>
 - Add a form to the individual post page to allow creating a new comment, which is saved to the new comments table including the Post ID.
 - Refresh the /posts route data when adding a new post, and redirect the user to the list of posts
 - Refresh the /post/:postId route when adding a new comment, so the new comment is displayed on the page
@@ -66,8 +66,26 @@ The project was implemented in two stages
 
 <br/>
 
+### Extra features
 
+- When viewing a single instance of a post/tip, a user can hit the 'Like' button to increase the number of likes that the post has, thus increasing the rating of the tip/post
+- If a category is clicked on to show a list of associated posts/tips, the list is ordered by the number of likes, in descending order (most number of likes first)
+- The date/time of posting is saved against the post/tip record and message/comment records (as PostgreSQL timestamps) 
 
-Live link at Vercel: [https://assignment-forum-nextjs.vercel.app/](https://assignment-forum-nextjs.vercel.app/)
+<br/>
+
+### Other notes
+
+- Although a 'Delete' button and 'Edit' button has been assigned to instances of messages, when listed underneath a post/tip, the functionality has not been added yet due to time restraints
+- I discovered a last minute bug when assigning a category to a post, in that when posts/tips are viewed as a single instance, the correct category is not displayed; however, the correct category is displayed when viewing the post/tip directly from the category list
+- Although timestamps are used to order previous messages/comments (see example query in the ListMessages component), I had some last minute problems pulling the date value out of the data returned, therefore they are not displayed on the posted records
 <br>
+
+### Links
+
+Live link at Vercel: [https://assignment-forum-nextjs.vercel.app/](https://assignment-forum-nextjs.vercel.app/)<br>
+Link to table setup SQL and population with basic test data: [here](https://github.com/mrdb303/assignment-forum-nextjs/blob/main/src/app/databaseinformation.txt)<br>
+Link to the database schema: [https://github.com/mrdb303/assignment-forum-nextjs/tree/main/src/schema](https://github.com/mrdb303/assignment-forum-nextjs/tree/main/src/schema)<br>
+<br><br>
+Note: changes were made to this readme file after the assignment was submitted. I checked that this was allowed. No other code was changed.
 
