@@ -76,8 +76,8 @@ To avoid the problems encountered in the previous week, the minimum requirements
 
 ### Other notes
 
-- Although a 'Delete' button and 'Edit' button has been assigned to instances of messages, when listed underneath a post/tip, the functionality has not been added yet due to time restraints
-- I discovered a last minute bug when assigning a category to a post, in that when posts/tips are viewed as a single instance, the correct category is not displayed; however, the correct category is displayed when viewing the post/tip directly from the category list
+- Although a 'Delete' button and 'Edit' button has been assigned to instances of messages, when listed underneath a post/tip, the functionality has not been added yet due to time constraints
+- I discovered a last minute bug when assigning a category to a post, in that when posts/tips are viewed as a single instance, the correct category is not displayed; however, the correct category is displayed when viewing the post/tip directly from the category list(too late to fix before submission)
 - Although timestamps are used to order previous messages/comments (see example query in the ListMessages component), I had some last minute problems pulling the date value out of the data returned, therefore they are not displayed on the posted records
 <br>
 
