@@ -15,7 +15,6 @@ export default async function ListCategories(){
   return (
     <>
       <h4>Categories: {categories.rowCount}</h4>
-      <div id="categories">
         {categories.rows.map((category) => {
           return (
             <Link key={"l" + category.cat_id} href={`/posts/categories/${category.cat_id}`}>
@@ -28,7 +27,6 @@ export default async function ListCategories(){
         })}
         <br/>
         <p>Click on a category above to see the tips in that section</p>
-      </div>
       </>
   );
 }
